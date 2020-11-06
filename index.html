@@ -71,15 +71,15 @@
 			}
 			else if(prediction[1].className == "class 2" && prediction[1].probability.toFixed(2) == 1.00)
 			{
-				labelContainer.childNodes[1].innerHTML = "스테플러";
+				labelContainer.childNodes[0].innerHTML = "스테플러";
 			}
 			else if(prediction[2].className == "class 3" && prediction[2].probability.toFixed(2) == 1.00)
 			{
-				labelContainer.childNodes[2].innerHTML = "볼펜";
+				labelContainer.childNodes[0].innerHTML = "볼펜";
 			}
 			else
 			{
-				labelContainer.childNodes[3].innerHTML = "알 수 없음";
+				labelContainer.childNodes[0].innerHTML = "알 수 없음";
 			}
         }
     }
