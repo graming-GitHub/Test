@@ -8,6 +8,7 @@
 </head>
 
 <body>
+
 <div>Teachable Machine Image Model</div>
 <button type="button" onclick="init()">Start</button>
 <div id="webcam-container"></div>
@@ -60,26 +61,27 @@
     async function predict() {
         // predict can take in an image, video or canvas html element
         const prediction = await model.predict(webcam.canvas);
-       
-	   for (let i = 0; i < maxPredictions; i++) {
+        for (let i = 0; i < maxPredictions; i++) {
             const classPrediction =
                 prediction[i].className + ": " + prediction[i].probability.toFixed(2);
-            labelContainer.childNodes[i].innerHTML = classPrediction;
-            
-			if(prediction[0].className == "class 1" && prediction[0].probability.toFixed(2)== 1.00)        
-			{            
-				labelContainer.childNodes[0].innerHTML = "마우스";        }        
-			else if(prediction[1].clas sName == "class 2" && prediction[1].probability.toFixed(2)== 1.00)        
-			{   
-				labelContainer.childNodes[0].innerHTML = "핸드크림";        }  
-			else if(prediction[2].className == "class 3" && prediction[2].probability.toFixed(2)== 1.00)        
-			{   
-				labelContainer.childNodes[0].innerHTML = "가위";        }  
+            //labelContainer.childNodes[i].innerHTML = classPrediction;
+			if(prediction[0].className == "class 1" && prediction[0].probability.toFixed(2) == 1.00)
+			{
+				labelContainer.childNodes[0].innerHTML = "가위";
+			}
+			else if(prediction[1].className == "class 2" && prediction[1].probability.toFixed(2) == 1.00)
+			{
+				labelContainer.childNodes[1].innerHTML = "스테플러";
+			}
+			else if(prediction[2].className == "class 3" && prediction[2].probability.toFixed(2) == 1.00)
+			{
+				labelContainer.childNodes[2].innerHTML = "볼펜";
+			}
 			else
-			{   
-				labelContainer.childNodes[0].innerHTML = "알 수 없음";        }	
-		}	
-
+			{
+				labelContainer.childNodes[3].innerHTML = "알 수 없음";
+			}
+        }
     }
 </script>
 
