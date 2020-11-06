@@ -65,21 +65,21 @@
             const classPrediction =
                 prediction[i].className + ": " + prediction[i].probability.toFixed(2);
             //labelContainer.childNodes[i].innerHTML = classPrediction;
-			if(prediction[0].className == "class 1" && prediction[0].probability.toFixed(2) == 1.00)
+			if(prediction[i].className == "class 1" && prediction[i].probability.toFixed(2) == 1.00)
 			{
-				labelContainer.childNodes[0].innerHTML = "가위";
+				labelContainer.childNodes[i].innerHTML = "가위";
 			}
-			else if(prediction[1].className == "class 2" && prediction[1].probability.toFixed(2) == 1.00)
+			else if(prediction[i].className == "class 2" && prediction[i].probability.toFixed(2) == 1.00)
 			{
-				labelContainer.childNodes[0].innerHTML = "스테플러";
+				labelContainer.childNodes[i].innerHTML = "스테플러";
 			}
-			else if(prediction[2].className == "class 3" && prediction[2].probability.toFixed(2) == 1.00)
+			else if(prediction[i].className == "class 3" && prediction[i].probability.toFixed(2) == 1.00)
 			{
-				labelContainer.childNodes[0].innerHTML = "볼펜";
+				labelContainer.childNodes[i].innerHTML = "볼펜";
 			}
 			else
 			{
-				labelContainer.childNodes[0].innerHTML = "알 수 없음";
+				labelContainer.childNodes[i].innerHTML = "알 수 없음";
 			}
         }
     }
